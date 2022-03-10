@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+node_modules
+*.log
+.*.log
+.pnpm
+.npm
+.yarn
+.cache
+*.*-workspace
+*.workspace
+.env
+.env.*
+.env.*.local
+!.env.project

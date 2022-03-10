@@ -1,0 +1,31 @@
+{
+  "name": "@nberlette/prettier",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Nicholas Berlette",
+    "email": "nick@berlette.com",
+    "url": "https://berlette.com"
+  },
+  "packageManager": "pnpm@6.32.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Prettier config for formatting my new projects.",
+  "repository": "nberlette/prettier",
+  "keywords": [
+    "prettier",
+    "config",
+    "formatting",
+    "linting",
+    "prettierrc"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "main": "./index.js",
+  "exports": "./index.js",
+  "scripts": {
+    "postpublish": "npm publish --ignore-scripts --@nberlette:registry='https://npm.pkg.github.com'"
+  }
+}
