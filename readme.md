@@ -1,4 +1,4 @@
-# <img src="https://icns.ml/prettier-e70.svg#gh-light-mode-only" width="40" align="left"><img src="https://icns.ml/prettier.svg#gh-dark-mode-only" width="40" align="left">  `@nberlette/prettier`
+# <img src="./.github/assets/prettier.svg" width="40" align="left" alt="">  `@nberlette/prettier`
 
 An opinionated Prettier configuration to scaffold my projects.
 
@@ -62,4 +62,4 @@ module.exports = {
 
 ---  
 
-[MIT](license.md) © [Nicholas Berlette](https://github.com/nberlette) · inspired by [@github/prettier-config](https://github.com/github/prettier-config)
+[MIT](./license.md) © [Nicholas Berlette](https://github.com/nberlette) · inspired by [@github/prettier-config](https://github.com/github/prettier-config)
