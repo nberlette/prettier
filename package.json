@@ -39,7 +39,7 @@
 	"scripts": {
 		"lint": "prettier --check '**/*.{ts,d.ts,js,json,md,yml,yaml}'",
 		"format": "prettier --write '**/*.{ts,d.ts,js,json,md,yml,yaml}'",
-		"version": "npm version --no-commit-hooks --sign-git-tag --allow-same-version minor",
+		"version": "npm version --no-commit-hooks --sign-git-tag --allow-same-version",
 		"prepublishOnly": "npm run format && npm run version minor",
 		"publish": "npm publish --access=public --tag=latest --scope=@brlt",
 		"postpublish": "npm publish --ignore-scripts --scope=@nberlette --@nberlette:registry='https://npm.pkg.github.com'"
