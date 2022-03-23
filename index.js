@@ -1,10 +1,10 @@
-const base = require("./base");
+const base = require('./base');
 
 module.exports = {
 	...base,
-  overrides: [
+	overrides: [
 		{
-      files: ['*.ts', '*.d.ts', '*.tsx'],
+			files: ['*.ts', '*.d.ts', '*.tsx'],
 			options: {
 				parser: 'babel-ts',
 				printWidth: 120,
@@ -12,17 +12,17 @@ module.exports = {
 				semi: false,
 				singleQuote: true,
 				jsxSingleQuote: false,
-			}
+			},
 		},
-    {
-      files: ['*.cjs', '*.mjs', '*.js', '*.jsx'],
+		{
+			files: ['*.cjs', '*.mjs', '*.js', '*.jsx'],
 			options: {
 				parser: 'babel',
 				printWidth: 120,
 				semi: false,
 				singleQuote: true,
-				jsxSingleQuote: false
-			}
+				jsxSingleQuote: false,
+			},
 		},
 		{
 			files: ['*.md', '*.markdown'],
@@ -32,7 +32,7 @@ module.exports = {
 				embeddedLanguageFormatting: 'auto',
 				htmlWhitespaceSensitivity: 'css',
 				trailingComma: 'none',
-				singleQuote: false
+				singleQuote: false,
 			},
 		},
 		{
@@ -41,8 +41,8 @@ module.exports = {
 				parser: 'yaml',
 				useTabs: false,
 				tabWidth: 2,
-				singleQuote: false
-			}
-		}
-	]
-}
+				singleQuote: false,
+			},
+		},
+	],
+};

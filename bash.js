@@ -1,11 +1,11 @@
-const base = require("./");
+const base = require('./');
 
 module.exports = {
 	...base,
-  overrides: [
+	overrides: [
 		...base.overrides,
 		{
-      files: [
+			files: [
 				'.aliases',
 				'.bash_aliases',
 				'.bash_profile',
@@ -17,23 +17,23 @@ module.exports = {
 				'.path',
 				'.profile',
 			],
-      options: {
+			options: {
 				parser: 'sh',
-        plugin: ['prettier-plugin-sh'],
-        useTabs: true,
-        tabWidth: 4,
-        printWidth: 80
-      }
-    },
-    {
-      files: ['*.sh', '*.bash', '.*.sh', '.*.bash'],
-      options: {
+				plugin: ['prettier-plugin-sh'],
+				useTabs: true,
+				tabWidth: 4,
+				printWidth: 80,
+			},
+		},
+		{
+			files: ['*.sh', '*.bash', '.*.sh', '.*.bash'],
+			options: {
 				parser: 'sh',
-        plugin: ['prettier-plugin-sh'],
-        useTabs: true,
-        tabWidth: 4,
-        printWidth: 80
-      }
-    }
-  ]
-}
+				plugin: ['prettier-plugin-sh'],
+				useTabs: true,
+				tabWidth: 4,
+				printWidth: 80,
+			},
+		},
+	],
+};

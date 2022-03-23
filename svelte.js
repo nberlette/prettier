@@ -1,12 +1,12 @@
-const base = require("./");
+const base = require('./');
 
 module.exports = {
 	...base,
-  overrides: [
+	overrides: [
 		...base.overrides,
-    {
-      files: ['*.svelte'],
-      options: {
+		{
+			files: ['*.svelte'],
+			options: {
 				parser: 'svelte',
 				plugins: ['svelte3/svelte3'],
 				semi: true,
@@ -15,33 +15,33 @@ module.exports = {
 				singleQuote: true,
 				proseWrap: 'always',
 				arrowParens: 'avoid',
-        trailingComma: 'es5',
-        svelteStrictMode: false,
-        svelteAllowShorthand: true,
-        svelteBracketNewLine: true,
-        svelteIndentScriptAndStyle: true,
-        svelteSortOrder: 'scripts-styles-options-markup'
-      }
-    },
+				trailingComma: 'es5',
+				svelteStrictMode: false,
+				svelteAllowShorthand: true,
+				svelteBracketNewLine: true,
+				svelteIndentScriptAndStyle: true,
+				svelteSortOrder: 'scripts-styles-options-markup',
+			},
+		},
 		{
-      files: ['*.svx', '*.svelte.md'],
-      options: {
-        parser: 'mdx', // mdsvex...?
+			files: ['*.svx', '*.svelte.md'],
+			options: {
+				parser: 'mdx', // mdsvex...?
 				plugins: ['svelte3/svelte3', 'mdsvex/mdsvex'],
-        tabWidth: 2,
+				tabWidth: 2,
 				useTabs: false,
 				singleQuote: true,
 				proseWrap: 'always',
 				arrowParens: 'avoid',
 				trailingComma: 'es5',
-        embeddedLanguageFormatting: 'auto',
-        htmlWhitespaceSensitivity: 'css',
+				embeddedLanguageFormatting: 'auto',
+				htmlWhitespaceSensitivity: 'css',
 				svelteStrictMode: false,
 				svelteAllowShorthand: true,
 				svelteBracketNewLine: true,
 				svelteIndentScriptAndStyle: false,
-				svelteSortOrder: 'scripts-styles-options-markup'
-      }
-    },
-  ]
-}
+				svelteSortOrder: 'scripts-styles-options-markup',
+			},
+		},
+	],
+};

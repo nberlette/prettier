@@ -40,7 +40,7 @@ diff --git a/package.json b/package.json
 ```
 
 ### Alternatively, use `.prettierrc`
- 
+
 From the [**Prettier Docs**](https://prettier.io/docs/en/configuration.html):
 
 If you don’t want to use `package.json`, you can use any of the supported extensions to export a **`string`**, e.g. `.prettierrc.json`:
@@ -53,13 +53,13 @@ If you don’t want to use `package.json`, you can use any of the supported exte
 
 ```js .prettierrc.js
 module.exports = {
-  ...require("@brlt/prettier"),
-  semi: false,
+	...require('@brlt/prettier'),
+	semi: false,
 };
 ```
 
 ### [See the Prettier Docs for more info on shared config ›](https://prettier.io/docs/en/configuration.html#sharing-configurations)
 
----  
+---
 
 [MIT](./license.md) © [Nicholas Berlette](https://github.com/nberlette) · inspired by [@github/prettier-config](https://github.com/github/prettier-config)

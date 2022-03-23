@@ -1,8 +1,8 @@
-const base = require("./");
+const base = require('./');
 
 module.exports = {
 	...base,
-  overrides: [
+	overrides: [
 		...base.overrides,
 		{
 			files: ['*.vue'],
@@ -20,7 +20,7 @@ module.exports = {
 				singleQuote: true,
 				proseWrap: 'always',
 				vueIndentScriptAndStyle: true,
-			}
-		}
-  ]
-}
+			},
+		},
+	],
+};

@@ -1,49 +1,49 @@
 {
-  "name": "@brlt/prettier",
-  "version": "1.2.0",
-  "license": "MIT",
-  "author": {
-    "name": "Nicholas Berlette",
-    "email": "nick@berlette.com",
-    "url": "https://berlette.com"
-  },
+	"name": "@brlt/prettier",
+	"version": "1.2.0",
+	"license": "MIT",
+	"author": {
+		"name": "Nicholas Berlette",
+		"email": "nick@berlette.com",
+		"url": "https://berlette.com"
+	},
 	"type": "commonjs",
-  "packageManager": "pnpm@6.32.3",
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "Prettier configs for formatting new projects.",
-  "repository": "nberlette/prettier",
-  "keywords": [
-    "prettier",
-    "config",
-    "formatting",
-    "linting",
-    "prettierrc"
-  ],
-  "files": [
-    "index.js",
+	"packageManager": "pnpm@6.32.3",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "Prettier configs for formatting new projects.",
+	"repository": "nberlette/prettier",
+	"keywords": [
+		"prettier",
+		"config",
+		"formatting",
+		"linting",
+		"prettierrc"
+	],
+	"files": [
+		"index.js",
 		"base.js",
 		"bash.js",
 		"svelte.js",
 		"vue.js"
-  ],
-  "main": "./index.js",
-  "exports": {
+	],
+	"main": "./index.js",
+	"exports": {
 		".": "./index.js",
 		"./base": "./base.js",
 		"./bash": "./bash.js",
 		"./svelte": "./svelte.js",
 		"./vue": "./vue.js"
 	},
-  "scripts": {
+	"scripts": {
 		"lint": "prettier --check '**/*.{ts,d.ts,js,json,md,yml,yaml}'",
 		"format": "prettier --write '**/*.{ts,d.ts,js,json,md,yml,yaml}'",
-		"version": "npm version --no-commit-hooks --sign-git-tag --allow-same-version --preid next ${1:-prerelease}",
+		"version": "npm version --no-commit-hooks --sign-git-tag --allow-same-version minor",
 		"prepublishOnly": "npm run format && npm run version minor",
-		"publish": "npm publish --access=public --tag=latest --scope=brlt",
-    "postpublish": "npm publish --ignore-scripts --scope=nberlette --@nberlette:registry='https://npm.pkg.github.com'"
-  },
+		"publish": "npm publish --access=public --tag=latest --scope=@brlt",
+		"postpublish": "npm publish --ignore-scripts --scope=@nberlette --@nberlette:registry='https://npm.pkg.github.com'"
+	},
 	"devDependencies": {
 		"prettier": "2.6.0"
 	}
