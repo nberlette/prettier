@@ -1,4 +1,4 @@
-# <img src="./.github/assets/prettier.svg" width="40" align="left" alt="">  `@nberlette/prettier`
+# <img src="./.github/assets/prettier.svg" width="40" align="left" alt="">  `@brlt/prettier`
 
 An opinionated Prettier configuration to scaffold my projects.
 
@@ -9,21 +9,21 @@ An opinionated Prettier configuration to scaffold my projects.
 <details open><summary><strong>PNPM</strong> <small>(recommended)</small></summary>
 
 ```sh
-pnpm i -D @nberlette/prettier
+pnpm i -D @brlt/prettier
 ```
 
 </details>
 <details><summary><strong>Yarn</strong> <small>(accepted)</small></summary>
 
 ```sh
-yarn add -D @nberlette/prettier
+yarn add -D @brlt/prettier
 ```
 
 </details>
 <details><summary><strong>NPM</strong> <small>(avoided)</small></summary>
 
 ```sh
-npm i -D @nberlette/prettier
+npm i -D @brlt/prettier
 ```
 
 </details><br>
@@ -35,7 +35,7 @@ diff --git a/package.json b/package.json
 
    "main": "index.js",
    "types": "index.d.ts",
-+  "prettier": "@nberlette/prettier",
++  "prettier": "@brlt/prettier",
    "devDependencies": {
 ```
 
@@ -46,14 +46,14 @@ From the [**Prettier Docs**](https://prettier.io/docs/en/configuration.html):
 If you don’t want to use `package.json`, you can use any of the supported extensions to export a **`string`**, e.g. `.prettierrc.json`:
 
 ```json .prettierrc.json
-"@nberlette/prettier"
+"@brlt/prettier"
 ```
 
 > **Note**: This method does not offer a way to extend the configuration to override certain properties from the shared config. To do that, import the file in a `.prettierrc.js` file and export the modifications, e.g:
 
 ```js .prettierrc.js
 module.exports = {
-  ...require("@nberlette/prettier"),
+  ...require("@brlt/prettier"),
   semi: false,
 };
 ```
