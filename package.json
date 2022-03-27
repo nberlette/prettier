@@ -45,7 +45,8 @@
 		"lint": "prettier --check '**/*.{ts,d.ts,js,json,md,yml,yaml}'",
 		"format": "prettier --write '**/*.{ts,d.ts,js,json,md,yml,yaml}'",
 		"version": "npm version --no-commit-hooks --sign-git-tag --allow-same-version",
-		"prepublishOnly": "npm run format && npm run version patch"
+		"prepublishOnly": "npm run format && npm run version patch",
+		"postpublish": "git push --follow-tags"
 	},
 	"devDependencies": {
 		"prettier": "2.6.0"

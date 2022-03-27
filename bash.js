@@ -19,7 +19,7 @@ module.exports = {
 			],
 			options: {
 				parser: 'sh',
-				plugin: ['prettier-plugin-sh'],
+				plugins: ['prettier-plugin-sh'],
 				useTabs: true,
 				tabWidth: 4,
 				printWidth: 80,
