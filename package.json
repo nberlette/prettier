@@ -12,14 +12,19 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"description": "Prettier configs for formatting new projects.",
+	"description": "Prettier configurations used in my projects.",
 	"repository": "nberlette/prettier",
 	"keywords": [
 		"prettier",
 		"config",
-		"formatting",
-		"linting",
-		"prettierrc"
+		"format",
+		"lint",
+		"svelte",
+		"vue",
+		"bash",
+		"jsx",
+		"tsx",
+		"esm"
 	],
 	"files": [
 		"index.js",
@@ -40,8 +45,7 @@
 		"lint": "prettier --check '**/*.{ts,d.ts,js,json,md,yml,yaml}'",
 		"format": "prettier --write '**/*.{ts,d.ts,js,json,md,yml,yaml}'",
 		"version": "npm version --no-commit-hooks --sign-git-tag --allow-same-version",
-		"prepublishOnly": "npm run format && npm run version minor",
-		"postpublish": "npm publish --ignore-scripts --scope=@nberlette --@nberlette:registry='https://npm.pkg.github.com'"
+		"prepublishOnly": "npm run format && npm run version patch"
 	},
 	"devDependencies": {
 		"prettier": "2.6.0"
