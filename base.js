@@ -1,3 +1,4 @@
+/** @type {Prettier.Config} */
 module.exports = {
 	arrowParens: 'avoid',
 	bracketSpacing: true,
@@ -10,4 +11,5 @@ module.exports = {
 	trailingComma: 'es5',
 	useTabs: false,
 	proseWrap: 'always',
+	pluginSearchDirs: ['.', 'node_modules', '**/node_modules/**']
 };
