@@ -1,3 +1,4 @@
+/** @type {Prettier.Config} */
 const base = require('./');
 
 module.exports = {
@@ -29,7 +30,7 @@ module.exports = {
 			files: ['*.sh', '*.bash', '.*.sh', '.*.bash'],
 			options: {
 				parser: 'sh',
-				plugin: ['prettier-plugin-sh'],
+				plugins: ['prettier-plugin-sh'],
 				useTabs: true,
 				tabWidth: 4,
 				printWidth: 80,
