@@ -7,24 +7,25 @@
 		"email": "nick@berlette.com",
 		"url": "https://berlette.com"
 	},
-	"type": "commonjs",
 	"packageManager": "pnpm@6.32.3",
 	"publishConfig": {
 		"access": "public"
+	},
+	"scripts": {
+		"lint": "prettier --check '**/*.{ts,js,json,md,yml,yaml}'",
+		"format": "prettier --write '**/*.{ts,js,json,md,yml,yaml}'",
+		"preversion": "git commit -a -m '🔖 prep for release'",
+		"version": "pnpm version --no-git-checks --no-commit-hooks --sign-git-tag --force",
+		"prepublishOnly": "pnpm format && rm -rf node_modules && pnpm run version patch",
+		"release:npm": "pnpm publish --registry=https://registry.npmjs.org",
+		"postpublish": "git push -u origin main --follow-tags"
 	},
 	"description": "Prettier configurations used in my projects.",
 	"repository": "nberlette/prettier",
 	"keywords": [
 		"prettier",
 		"config",
-		"format",
-		"lint",
-		"svelte",
-		"vue",
-		"bash",
-		"jsx",
-		"tsx",
-		"esm"
+		"format"
 	],
 	"files": [
 		"index.js",
@@ -34,19 +35,20 @@
 		"vue.js"
 	],
 	"main": "./index.js",
+	"types": "./index.d.ts",
 	"exports": {
-		".": "./index.js",
+		".": {
+			"types": "./index.d.ts",
+			"require": "./index.js",
+			"import": "./index.js",
+			"default": "./index.js"
+		},
 		"./base": "./base.js",
 		"./bash": "./bash.js",
 		"./svelte": "./svelte.js",
-		"./vue": "./vue.js"
-	},
-	"scripts": {
-		"lint": "prettier --check '**/*.{ts,d.ts,js,json,md,yml,yaml}'",
-		"format": "prettier --write '**/*.{ts,d.ts,js,json,md,yml,yaml}'",
-		"version": "npm version --no-commit-hooks --sign-git-tag --allow-same-version",
-		"prepublishOnly": "npm run format && npm run version patch",
-		"postpublish": "git push --follow-tags"
+		"./vue": "./vue.js",
+		"./package.json": "./package.json",
+		"./*": "./*"
 	},
 	"devDependencies": {
 		"prettier": "2.6.0"
