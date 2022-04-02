@@ -14,11 +14,13 @@
 	"scripts": {
 		"lint": "prettier --check '**/*.{ts,js,json,md,yml,yaml}'",
 		"format": "prettier --write '**/*.{ts,js,json,md,yml,yaml}'",
-		"preversion": "git commit -a -m '🔖 prep for release'",
-		"version": "pnpm version --no-git-checks --no-commit-hooks --sign-git-tag --force",
-		"prepublishOnly": "pnpm format && rm -rf node_modules && pnpm run version patch",
-		"release:npm": "pnpm publish --registry=https://registry.npmjs.org",
-		"postpublish": "git push -u origin main --follow-tags"
+		"preversion": "pnpm run lint",
+		"version": "pnpm format && git add --all",
+		"postversion": "git push --follow-tags",
+		"prepublishOnly": "pnpm run release:patch",
+		"postpublish": "rm -rf node_modules",
+		"release": "pnpm publish --no-git-checks --registry=https://registry.npmjs.org",
+		"release:patch": "pnpm version patch -m '🔖 %s' --no-git-checks --no-commit-hooks --sign-git-tag --git-tag-version --allow-same-version --force"
 	},
 	"description": "Prettier configurations used in my projects.",
 	"repository": "nberlette/prettier",
