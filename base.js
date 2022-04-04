@@ -11,5 +11,5 @@ module.exports = {
 	trailingComma: 'es5',
 	useTabs: false,
 	proseWrap: 'always',
-	pluginSearchDirs: ['.', 'node_modules', '**/node_modules/**'],
+	pluginSearchDirs: ['.', 'node_modules'],
 };
