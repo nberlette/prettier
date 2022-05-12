@@ -2,7 +2,6 @@ const base = require('@brlt/prettier')
 
 /** @type {PrettierConfig} */
 module.exports = {
-	/** @type {PrettierConfig} */
 	...(base || {}),
 	overrides: [
 		...(base.overrides || []),
