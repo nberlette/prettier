@@ -1,6 +1,6 @@
 {
 	"name": "@brlt/prettier",
-	"version": "1.7.2",
+	"version": "1.7.4",
 	"license": "MIT",
 	"author": {
 		"name": "Nicholas Berlette",
@@ -20,15 +20,15 @@
 		"access": "public",
 		"registry": "https://registry.npmjs.org/"
 	},
+	"prettier": "./index.js",
 	"scripts": {
-		"format:base": "prettier --ignore-path=.gitignore --no-error-on-unmatched-pattern",
-		"lint": "nr format:base -c '**/*.{js,jsx,ts,tsx}'",
-		"format": "nr format:base -w '**/*.{js,jsx,ts,tsx}'",
+		"format:base": "prettier --config package.json --ignore-path=.gitignore --no-error-on-unmatched-pattern --ignore-unknown --loglevel warn",
+		"lint": "nr format:base -c '**/*.{js,ts,md}'",
+		"format": "nr format:base -w '**/*.{js,ts,md}'",
 		"preversion": "nr format && nr lint",
-		"version": "git add --all",
 		"postversion": "npm publish --registry=https://registry.npmjs.org --no-git-checks --no-commit-hooks --allow-same-version --no-git-tag-version",
 		"postpublish": "npx -q -y rimraf node_modules",
-		"release:base": "_v(){npx -q -y bumpp ${1:-patch} --tag --commit ${2:-'📦 %s'} --push package.json pnpm-lock.yaml readme.md index.d.ts {index,all,bash,react,svelte,vue}.js ;};_v $*;",
+		"release:base": "_v(){ npx -q -y bumpp \"${1:-patch}\" -a --tag --commit \"${2:-'📦 %s'}\" --push package.json pnpm-lock.yaml readme.md index.d.ts *.js; }; _v $*;",
 		"release:major": "nr release:base major",
 		"release:minor": "nr release:base minor",
 		"release:patch": "nr release:base patch",

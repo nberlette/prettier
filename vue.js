@@ -1,10 +1,14 @@
-const base = require('@brlt/prettier');
+/**
+ * @version {1.7.4}
+ * @type {PrettierOptions}
+ */
+const config = require('@brlt/prettier');
 
 /** @type {PrettierConfig} */
 module.exports = {
-	...(base || {}),
+	...(config || {}),
 	overrides: [
-		...(base.overrides || []),
+		...(config.overrides || []),
 		{
 			files: ['*.vue'],
 			options: {

@@ -1,12 +1,15 @@
-/** @type {PrettierConfig} */
+/**
+ * @version {1.7.4}
+ * @type {PrettierConfig}
+ */
 module.exports = {
 	arrowParens: 'avoid',
 	bracketSpacing: false,
 	bracketSameLine: true,
 	embeddedLanguageFormatting: 'auto',
-	htmlWhitespaceSensitivity: 'strict',
+	htmlWhitespaceSensitivity: 'css',
 	printWidth: 120,
-	quoteProps: 'consistent',
+	quoteProps: 'preserve',
 	semi: true,
 	singleQuote: true,
 	proseWrap: 'always',
@@ -14,4 +17,4 @@ module.exports = {
 	tabWidth: 2,
 	endOfLine: 'lf',
 	trailingComma: 'all',
-};
+}
