@@ -7,7 +7,7 @@ type LiteralUnion<T extends U, U = string> = T | (Pick<U, never> & { _?: never |
 /**
  * Opinionated shareable Prettier configuration rules.
  * @package {@brlt/prettier}
- * @version {1.7.4}
+ * @version {1.7.5}
  * @license {MIT}
  * @author Nicholas Berlette <https://github.com/nberlette>
  */
