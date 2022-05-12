@@ -21,14 +21,14 @@
 		"directory": "./dist"
 	},
 	"scripts": {
-		"prettier": "prettier --ignore-path=.gitignore '**/*.{ts,tsx,js,jsx,cjs,mjs}'",
-		"lint": "nr prettier -- -c",
-		"format": "nr prettier -- -w",
+		"prettier": "prettier --ignore-path=.gitignore --no-error-on-unmatched-pattern",
+		"lint": "nr prettier -c '**/*.{js,jsx,ts,tsx}",
+		"format": "nr prettier -w '**/*.{js,jsx,ts,tsx}",
 		"preversion": "nr lint",
 		"version": "nr format && git add --all",
 		"postpublish": "npx rimraf node_modules",
-		"postversion": "np --registry=https://registry.npmjs.org --no-git-checks --no-commit-hooks --allow-same-version",
-		"release": "npx -y bumpp --tag '📦 %s' --commit --push"
+		"publish:npm": "np --registry=https://registry.npmjs.org --no-git-checks --no-commit-hooks --allow-same-version",
+		"release": "npx -y bumpp --tag '📦 %s' --commit --push && nr publish:npm"
 	},
 	"repository": "nberlette/prettier",
 	"homepage": "https://npmjs.com/package/@brlt/prettier",
