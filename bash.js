@@ -1,5 +1,5 @@
 /**
- * @version {1.7.5}
+ * @version {1.7.6}
  * @type {PrettierOptions}
  */
 const config = require('@brlt/prettier')
