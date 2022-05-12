@@ -6,19 +6,14 @@ module.exports = {
 	overrides: [
 		...(base.overrides || []),
 		{
-			files: ['*.vue'],
+			files: ['*.jsx', '*.tsx', '*.mdx'],
 			options: {
-				parser: 'vue',
-				trailingComma: 'all',
 				semi: false,
-				proseWrap: 'always',
-				singleQuote: true,
 				jsxSingleQuote: false,
-				bracketSameLine: true,
-				bracketSpacing: true,
 				singleAttributePerLine: true,
+				bracketSameLine: true,
 				vueIndentScriptAndStyle: true,
 			},
 		},
-	],
+	]
 };

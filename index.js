@@ -1,36 +1,17 @@
-const base = require('./base');
-
+/** @type {PrettierConfig} */
 module.exports = {
-	...base,
-	overrides: [
-		{
-			files: ['*.ts', '*.d.ts', '*.tsx', '*.cjs', '*.mjs', '*.js', '*.jsx'],
-			options: {
-				printWidth: 120,
-				semi: false,
-				singleQuote: true,
-				jsxSingleQuote: false,
-			},
-		},
-		{
-			files: ['*.md', '*.markdown'],
-			options: {
-				parser: 'markdown',
-				tabWidth: 2,
-				embeddedLanguageFormatting: 'auto',
-				htmlWhitespaceSensitivity: 'css',
-				trailingComma: 'none',
-				singleQuote: false,
-			},
-		},
-		{
-			files: ['*.yml', '*.yaml', '.*.yml', '.*.yaml'],
-			options: {
-				parser: 'yaml',
-				useTabs: false,
-				tabWidth: 2,
-				singleQuote: false,
-			},
-		},
-	],
+	arrowParens: 'avoid',
+	bracketSpacing: false,
+	bracketSameLine: true,
+	embeddedLanguageFormatting: 'auto',
+	htmlWhitespaceSensitivity: 'strict',
+	printWidth: 120,
+	quoteProps: 'consistent',
+	semi: true,
+	singleQuote: true,
+	proseWrap: 'always',
+	useTabs: false,
+	tabWidth: 2,
+	endOfLine: 'lf',
+	trailingComma: 'all',
 };

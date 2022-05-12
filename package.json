@@ -1,58 +1,85 @@
 {
 	"name": "@brlt/prettier",
-	"version": "1.6.4",
+	"version": "1.7.0",
 	"license": "MIT",
 	"author": {
 		"name": "Nicholas Berlette",
 		"email": "nick@berlette.com",
-		"url": "https://berlette.com"
+		"url": "https://github.com/nberlette"
 	},
-	"packageManager": "pnpm@6.32.3",
+	"packageManager": "pnpm@7.1.0",
+	"pnpm": {
+		"peerDependencyRules": {
+			"ignoreMissing": [
+				"svelte"
+			]
+		}
+	},
+	"private": false,
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"directory": "./dist"
 	},
 	"scripts": {
-		"lint": "prettier --check '**/*.{ts,js,json,md,yml,yaml}'",
-		"format": "prettier --write '**/*.{ts,js,json,md,yml,yaml}'",
-		"preversion": "pnpm run lint",
-		"version": "pnpm format && git add --all",
-		"postversion": "git push --follow-tags",
-		"prepublishOnly": "pnpm run release:patch",
-		"postpublish": "rm -rf node_modules",
-		"release": "pnpm publish --no-git-checks --registry=https://registry.npmjs.org",
-		"release:patch": "pnpm version patch -m '🔖 %s' --no-git-checks --no-commit-hooks --sign-git-tag --git-tag-version --allow-same-version --force"
+		"prettier": "prettier --ignore-path=.gitignore '**/*.{ts,tsx,js,jsx,cjs,mjs}'",
+		"lint": "nr prettier -- -c",
+		"format": "nr prettier -- -w",
+		"preversion": "nr lint",
+		"version": "nr format && git add --all",
+		"postpublish": "npx rimraf node_modules",
+		"postversion": "np --registry=https://registry.npmjs.org --no-git-checks --no-commit-hooks --allow-same-version",
+		"release": "npx -y bumpp --tag '📦 %s' --commit --push"
 	},
-	"description": "Prettier configurations used in my projects.",
 	"repository": "nberlette/prettier",
+	"homepage": "https://npmjs.com/package/@brlt/prettier",
+	"readme": "https://github.com/nberlette/prettier#readme",
+	"bugs": "https://github.com/nberlette/prettier/issues",
+	"description": "My personal prettier-config rules for Bash, React, Svelte, and Vue projects.",
 	"keywords": [
 		"prettier",
 		"config",
 		"format"
 	],
 	"files": [
+		"index.d.ts",
 		"index.js",
-		"base.js",
 		"bash.js",
+		"react.js",
 		"svelte.js",
 		"vue.js"
 	],
-	"main": "./index.js",
-	"types": "./index.d.ts",
+	"main": "index.js",
+	"types": "index.d.ts",
 	"exports": {
 		".": {
 			"types": "./index.d.ts",
 			"require": "./index.js",
-			"import": "./index.js",
-			"default": "./index.js"
+			"import": "./index.js"
 		},
-		"./base": "./base.js",
 		"./bash": "./bash.js",
+		"./react": "./react.js",
 		"./svelte": "./svelte.js",
+		"./index.js": "./index.js",
+		"./base": "./index.js",
 		"./vue": "./vue.js",
-		"./package.json": "./package.json",
-		"./*": "./*"
+		"./vue.js": "./vue.js",
+		"./bash.js": "./bash.js",
+		"./react.js": "./react.js",
+		"./svelte.js": "./svelte.js",
+		"./index.d.ts": "./index.d.ts",
+		"./package.json": "./package.json"
 	},
 	"devDependencies": {
+		"@brlt/n": "0.1.1",
+		"@types/prettier": "2.6.0",
+		"pnpm": "^7.1.0",
 		"prettier": "2.6.0"
+	},
+	"dependencies": {
+		"prettier-plugin-sh": "^0.11.0",
+		"prettier-plugin-svelte": "^2.7.0"
+	},
+	"peerDependencies": {
+		"prettier": "*"
 	}
 }

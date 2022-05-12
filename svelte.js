@@ -1,26 +1,37 @@
-const base = require('./');
+const base = require('@brlt/prettier');
 
+/** @type {PrettierConfig} */
 module.exports = {
-	...base,
+	...(base || {}),
 	overrides: [
-		...base.overrides,
+		...(base.overrides || []),
 		{
 			files: ['*.svelte'],
 			options: {
 				parser: 'svelte',
 				plugins: ['prettier-plugin-svelte'],
-				semi: true,
+				semi: false,
 				tabWidth: 2,
 				useTabs: false,
-				singleQuote: true,
-				proseWrap: 'always',
-				arrowParens: 'avoid',
+				singleQuote: false,
+				proseWrap: 'preserve',
 				trailingComma: 'es5',
-				svelteStrictMode: false,
+				bracketSameLine: true,
+				bracketSpacing: false,
+				jsxSingleQuote: false,
+				singleAttributePerLine: true,
+				quoteProps: 'consistent',
+				printWidth: 100,
+				htmlWhitespaceSensitivity: 'strict',
+				vueIndentScriptAndStyle: true,
+				arrowParens: 'avoid',
+				endOfLine: 'lf',
+				/** @see prettier-plugin-svelte */
+				svelteStrictMode: true,
 				svelteAllowShorthand: true,
-				svelteBracketNewLine: true,
+				svelteBracketNewLine: false,
 				svelteIndentScriptAndStyle: true,
-				svelteSortOrder: 'scripts-styles-options-markup',
+				svelteSortOrder: 'scripts-options-markup-styles',
 			},
 		},
 	],

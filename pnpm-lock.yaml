@@ -1,0 +1,68 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@brlt/n': 0.1.1
+  '@types/prettier': 2.6.0
+  pnpm: ^7.1.0
+  prettier: 2.6.0
+  prettier-plugin-sh: ^0.11.0
+  prettier-plugin-svelte: ^2.7.0
+
+dependencies:
+  prettier-plugin-sh: 0.11.0_prettier@2.6.0
+  prettier-plugin-svelte: 2.7.0_prettier@2.6.0
+
+devDependencies:
+  '@brlt/n': 0.1.1
+  '@types/prettier': 2.6.0
+  pnpm: 7.1.0
+  prettier: 2.6.0
+
+packages:
+
+  /@brlt/n/0.1.1:
+    resolution: {integrity: sha512-SV88ciHBw91yD+L5YB3Vto18bAAp842DsmlVTOIIhMg7t671Iqtl31P8l3A4C5w+vMzhl7n+a6MTbzwVPY6hzQ==}
+    hasBin: true
+    dev: true
+
+  /@types/prettier/2.6.0:
+    resolution: {integrity: sha512-G/AdOadiZhnJp0jXCaBQU449W2h716OW/EoXeYkCytxKL06X1WCXB4DZpp8TpZ8eyIJVS1cw4lrlkkSYU21cDw==}
+    dev: true
+
+  /mvdan-sh/0.10.1:
+    resolution: {integrity: sha512-kMbrH0EObaKmK3nVRKUIIya1dpASHIEusM13S4V1ViHFuxuNxCo+arxoa6j/dbV22YBGjl7UKJm9QQKJ2Crzhg==}
+    dev: false
+
+  /pnpm/7.1.0:
+    resolution: {integrity: sha512-iT2Hk2jycfh8NXoEnwpg7oCNMwsMlheSR9QAgkhWtRHvjfAAtp0HsKEOA62ILoAwbvv/ea8Ph5lTQLsGQJRq+w==}
+    engines: {node: '>=14.19'}
+    hasBin: true
+    dev: true
+
+  /prettier-plugin-sh/0.11.0_prettier@2.6.0:
+    resolution: {integrity: sha512-YwuWGYuf6UiF80BZ3Lrby2yot0zRcktcBl+VD/xSLoPrmiH/yXcopz3RBtNMNcBeP13ALim9N/LtlTCmvUziVQ==}
+    engines: {node: '>=12.20'}
+    peerDependencies:
+      prettier: ^2.0.0
+    dependencies:
+      mvdan-sh: 0.10.1
+      prettier: 2.6.0
+    dev: false
+
+  /prettier-plugin-svelte/2.7.0_prettier@2.6.0:
+    resolution: {integrity: sha512-fQhhZICprZot2IqEyoiUYLTRdumULGRvw0o4dzl5jt0jfzVWdGqeYW27QTWAeXhoupEZJULmNoH3ueJwUWFLIA==}
+    peerDependencies:
+      prettier: ^1.16.4 || ^2.0.0
+      svelte: ^3.2.0
+    peerDependenciesMeta:
+      svelte:
+        optional: true
+    dependencies:
+      prettier: 2.6.0
+    dev: false
+
+  /prettier/2.6.0:
+    resolution: {integrity: sha512-m2FgJibYrBGGgQXNzfd0PuDGShJgRavjUoRCw1mZERIWVSXF0iLzLm+aOqTAbLnC3n6JzUhAA8uZnFVghHJ86A==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
