@@ -1,6 +1,6 @@
 {
 	"name": "@brlt/prettier",
-	"version": "1.7.1",
+	"version": "1.7.2",
 	"license": "MIT",
 	"author": {
 		"name": "Nicholas Berlette",
@@ -18,20 +18,20 @@
 	"private": false,
 	"publishConfig": {
 		"access": "public",
-		"directory": "./dist"
+		"registry": "https://registry.npmjs.org/"
 	},
 	"scripts": {
 		"prettier": "prettier --ignore-path=.gitignore --no-error-on-unmatched-pattern",
-		"lint": "nr prettier --check '**/*.{js,jsx,ts,tsx}'",
-		"format": "nr prettier --write '**/*.{js,jsx,ts,tsx}'",
-		"preversion": "nr lint",
-		"version": "nr format && git add --all",
-		"postpublish": "npx rimraf node_modules",
-		"publish:npm": "np --registry=https://registry.npmjs.org --no-git-checks --no-commit-hooks --allow-same-version",
-		"release": "npx -y bumpp --tag '📦 %s' --commit --push && nr publish:npm"
+		"lint": "nr prettier -c '**/*.{js,jsx,ts,tsx}'",
+		"format": "nr prettier -w '**/*.{js,jsx,ts,tsx}'",
+		"preversion": "nr format && nr lint",
+		"version": "git add --all",
+		"postversion": "npm publish --registry=https://registry.npmjs.org --no-git-checks --no-commit-hooks --allow-same-version --no-git-tag-version",
+		"postpublish": "npx -q -y rimraf node_modules",
+		"release:base": "_v(){npx -q -y bumpp ${1:-patch} --tag --commit ${2:-'📦 %s'} package.json pnpm-lock.yaml readme.md index.d.ts {index,all,bash,react,svelte,vue}.js ;};_v $*;"
 	},
 	"repository": "nberlette/prettier",
-	"homepage": "https://npmjs.com/package/@brlt/prettier",
+	"homepage": "https://npm.im/@brlt/prettier",
 	"readme": "https://github.com/nberlette/prettier#readme",
 	"bugs": "https://github.com/nberlette/prettier/issues",
 	"description": "My personal prettier-config rules for Bash, React, Svelte, and Vue projects.",
@@ -71,13 +71,9 @@
 	},
 	"devDependencies": {
 		"@brlt/n": "0.1.1",
-		"@types/prettier": "2.6.0",
-		"pnpm": "^7.1.0",
-		"prettier": "2.6.0"
-	},
-	"dependencies": {
-		"prettier-plugin-sh": "^0.11.0",
-		"prettier-plugin-svelte": "^2.7.0"
+		"@types/prettier": "2.6.1",
+		"pnpm": "7.1.0",
+		"prettier": "2.6.2"
 	},
 	"peerDependencies": {
 		"prettier": "*"
