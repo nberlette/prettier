@@ -9,10 +9,8 @@ node_modules
 .cache
 *.*-workspace
 *.workspace
-.env
-.env.*
-.env.*.local
-!.env.project
+.
+.env*
 .vscode
 .gitpod.yml
 .pnpmfile.cjs
