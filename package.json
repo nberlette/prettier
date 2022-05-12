@@ -21,14 +21,17 @@
 		"registry": "https://registry.npmjs.org/"
 	},
 	"scripts": {
-		"prettier": "prettier --ignore-path=.gitignore --no-error-on-unmatched-pattern",
-		"lint": "nr prettier -c '**/*.{js,jsx,ts,tsx}'",
-		"format": "nr prettier -w '**/*.{js,jsx,ts,tsx}'",
+		"format:base": "prettier --ignore-path=.gitignore --no-error-on-unmatched-pattern",
+		"lint": "nr format:base -c '**/*.{js,jsx,ts,tsx}'",
+		"format": "nr format:base -w '**/*.{js,jsx,ts,tsx}'",
 		"preversion": "nr format && nr lint",
 		"version": "git add --all",
 		"postversion": "npm publish --registry=https://registry.npmjs.org --no-git-checks --no-commit-hooks --allow-same-version --no-git-tag-version",
 		"postpublish": "npx -q -y rimraf node_modules",
-		"release:base": "_v(){npx -q -y bumpp ${1:-patch} --tag --commit ${2:-'📦 %s'} package.json pnpm-lock.yaml readme.md index.d.ts {index,all,bash,react,svelte,vue}.js ;};_v $*;"
+		"release:base": "_v(){npx -q -y bumpp ${1:-patch} --tag --commit ${2:-'📦 %s'} package.json pnpm-lock.yaml readme.md index.d.ts {index,all,bash,react,svelte,vue}.js ;};_v $*;",
+		"release:major": "nr release:base major",
+		"release:minor": "nr release:base minor",
+		"release:patch": "nr release:base patch"
 	},
 	"repository": "nberlette/prettier",
 	"homepage": "https://npm.im/@brlt/prettier",
@@ -38,11 +41,17 @@
 	"keywords": [
 		"prettier",
 		"config",
-		"format"
+		"format",
+		"base",
+		"react",
+		"svelte",
+		"vue",
+		"prettier-config"
 	],
 	"files": [
 		"index.d.ts",
 		"index.js",
+		"all.js",
 		"bash.js",
 		"react.js",
 		"svelte.js",
@@ -56,12 +65,12 @@
 			"require": "./index.js",
 			"import": "./index.js"
 		},
+		"./vue": "./vue.js",
+		"./all": "./all.js",
 		"./bash": "./bash.js",
 		"./react": "./react.js",
 		"./svelte": "./svelte.js",
 		"./index.js": "./index.js",
-		"./base": "./index.js",
-		"./vue": "./vue.js",
 		"./vue.js": "./vue.js",
 		"./bash.js": "./bash.js",
 		"./react.js": "./react.js",
