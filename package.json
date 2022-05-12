@@ -1,6 +1,6 @@
 {
 	"name": "@brlt/prettier",
-	"version": "1.7.7",
+	"version": "1.8.0",
 	"license": "MIT",
 	"author": {
 		"name": "Nicholas Berlette",
@@ -28,7 +28,7 @@
 		"preversion": "nr format && nr lint",
 		"publish:npm": "pnpm publish --no-git-checks --access public --force",
 		"postpublish": "npx -q -y rimraf node_modules",
-		"release:base": "_v(){ npx -q -y bumpp \"${1:-patch}\" -q -a --tag --commit \"${2:-'📦 %s'}\" --push package.json pnpm-lock.yaml readme.md index.d.ts *.js; }; _v $*;",
+		"release:base": "_v(){ npx -q -y bumpp \"${2:-patch}\" -q -a --tag --commit \"${3:-'📦 %s'}\" --push package.json pnpm-lock.yaml readme.md index.d.ts *.js; }; _v",
 		"release:major": "nr release:base major && nr publish:npm",
 		"release:minor": "nr release:base minor && nr publish:npm",
 		"release:patch": "nr release:base patch && nr publish:npm",

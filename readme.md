@@ -1,4 +1,4 @@
-# <img src="./.github/assets/prettier.svg" width="40" align="left" alt="">  `pnpm add @brlt/prettier@1.7.7`
+# <img src="./.github/assets/prettier.svg" width="40" align="left" alt="">  `pnpm add @brlt/prettier@1.8.0`
 
 An opinionated Prettier configuration to scaffold my projects. Rulesets included for Bash, JSX/TSX,
 React, Svelte, and Vue.
@@ -9,15 +9,15 @@ React, Svelte, and Vue.
 for it. Make sure you install `prettier` too!
 
 ```sh
-pnpm add -D @brlt/prettier@1.7.7 # overrides may change w/o notice. pin the version!
+pnpm add -D @brlt/prettier@1.8.0 # overrides may change w/o notice. pin the version!
 ```
 
 ```sh
-yarn add --dev @brlt/prettier@1.7.7
+yarn add --dev @brlt/prettier@1.8.0
 ```
 
 ```sh
-npm i -D @brlt/prettier@1.7.7
+npm i -D @brlt/prettier@1.8.0
 ```
 
 <br>
@@ -103,7 +103,7 @@ module.exports = {
 /**
  * Opinionated shareable Prettier configuration rules.
  * @package {@brlt/prettier}
- * @version {1.7.7}
+ * @version {1.8.0}
  * @license {MIT}
  * @author Nicholas Berlette <https://github.com/nberlette>
  */
