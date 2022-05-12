@@ -22,8 +22,8 @@
 	},
 	"scripts": {
 		"prettier": "prettier --ignore-path=.gitignore --no-error-on-unmatched-pattern",
-		"lint": "nr prettier -c '**/*.{js,jsx,ts,tsx}",
-		"format": "nr prettier -w '**/*.{js,jsx,ts,tsx}",
+		"lint": "nr prettier --check '**/*.{js,jsx,ts,tsx}'",
+		"format": "nr prettier --write '**/*.{js,jsx,ts,tsx}'",
 		"preversion": "nr lint",
 		"version": "nr format && git add --all",
 		"postpublish": "npx rimraf node_modules",
