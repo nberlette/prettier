@@ -1,4 +1,4 @@
-/** @version {1.8.0} */
+/** @version {1.8.1} */
 /** @type {PrettierConfig} */
 module.exports = {
 	...(require('@brlt/prettier')),
