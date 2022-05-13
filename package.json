@@ -30,7 +30,7 @@
 		"?format": "Format the codebase with prettier",
 		"preversion": "nr format && nr lint",
 		"?preversion": "Ensure lint succeeds before versioning new release",
-		"release": "_v(){ npx -q -y bumpp \"${2:-patch}\" -q -a --tag --commit \"${3:-'📦 %s'}\" --push package.json pnpm-lock.yaml readme.md index.d.ts *.js; }; _v",
+		"release": "_v(){ npx -q -y bumpp ${2:-patch} -q -a --tag --commit ${3:-\"📦 %s\"} --push package.json pnpm-lock.yaml readme.md index.d.ts *.js; }; _v",
 		"?release": "Bump the package version, tag, and push to GitHub"
 	},
 	"repository": "nberlette/prettier",
