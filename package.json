@@ -81,7 +81,7 @@
 	"devDependencies": {
 		"@brlt/n": "0.1.1",
 		"@types/prettier": "2.6.1",
-		"pnpm": "7.1.0",
+		"pnpm": "7.33.4",
 		"prettier": "2.6.2"
 	},
 	"peerDependencies": {
