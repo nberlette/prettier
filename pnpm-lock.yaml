@@ -3,13 +3,13 @@ lockfileVersion: 5.4
 specifiers:
   '@brlt/n': 0.1.1
   '@types/prettier': 2.6.1
-  pnpm: 7.1.0
+  pnpm: 7.33.4
   prettier: 2.6.2
 
 devDependencies:
   '@brlt/n': 0.1.1
   '@types/prettier': 2.6.1
-  pnpm: 7.1.0
+  pnpm: 7.33.4
   prettier: 2.6.2
 
 packages:
@@ -23,9 +23,9 @@ packages:
     resolution: {integrity: sha512-XFjFHmaLVifrAKaZ+EKghFHtHSUonyw8P2Qmy2/+osBnrKbH9UYtlK10zg8/kCt47MFilll/DEDKy3DHfJ0URw==}
     dev: true
 
-  /pnpm/7.1.0:
-    resolution: {integrity: sha512-iT2Hk2jycfh8NXoEnwpg7oCNMwsMlheSR9QAgkhWtRHvjfAAtp0HsKEOA62ILoAwbvv/ea8Ph5lTQLsGQJRq+w==}
-    engines: {node: '>=14.19'}
+  /pnpm/7.33.4:
+    resolution: {integrity: sha512-xEbf/tkwHpGM/GXq5U/sDSiE6ykLPho+o71PHNRWqkVLm6dJe4G/5Pg619Ow32ovekrr7pii5qtfamujB/+1bA==}
+    engines: {node: '>=14.6'}
     hasBin: true
     dev: true
 
